@@ -1,0 +1,3 @@
+- name: Ensure Groups exist
+  group: name={{item.name}} state={{item.state}}
+  with_items: "{{ the_groups }}"
