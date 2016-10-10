@@ -1,9 +1,11 @@
 ---
 - name: Add key
   apt_key: url="http://deb.nodesource.com/gpgkey/nodesource.gpg.key" state=present 
+  become: yes
 
 - name: Add repo
   apt_repository: repo='deb http://deb.nodesource.com/node_0.10 trusty main'  update_cache=yes
+  become: yes
 
 - name: Install nodejs
   apt: name=nodejs state=latest
