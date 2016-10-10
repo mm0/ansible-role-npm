@@ -1,11 +1,11 @@
 - hosts: all
   vars:
   - npm_modules_to_install:
-  - name: npm
-    state: latest
-    global: yes
-  - name: grunt-cli
-    state: latest
-    global: yes
+    - name: npm
+      state: latest
+      global: yes
+    - name: grunt-cli
+      state: latest
+      global: yes
   roles:
   - { role: ansible-role-npm, node_modules: "{{ npm_modules_to_install }}" }
