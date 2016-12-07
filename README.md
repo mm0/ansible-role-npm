@@ -18,6 +18,8 @@ Available variables are listed below, along with default values:
     - name: npm
       state: latest # latest/present/absent
 			global: yes # or no
+    node_version: 0.10 # defaults to 0.10, used to configure apt repository
+    distro: trusty # used to specify ubuntu distro
 
 ## Dependencies
 
