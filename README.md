@@ -18,14 +18,14 @@ Role Variables
 Available variables are listed below, along with default values:
 
 ```yml
-    npm_modules:  # list of npm modules to install/remove
-    - name: npm
-      state: latest # latest/present/absent
-      global: yes # or no
-    
-    node_version: 0.10 # defaults to 0.10, used to configure apt repository
-    
-    distro: trusty # used to specify ubuntu distro
+npm_modules:  # list of npm modules to install/remove
+- name: npm
+  state: latest # latest/present/absent
+  global: yes # or no
+
+node_version: 0.10 # defaults to 0.10, used to configure apt repository
+
+distro: trusty # used to specify ubuntu distro
 ```
 
 Dependencies
@@ -35,17 +35,17 @@ None
 Example Playbook
 ---
 ```yml
-    - hosts: webservers
-      vars:
-			- npm_modules_to_install:
-				- name: npm
-					state: latest
-					global: yes
-				- name: grunt-cli
-					state: latest
-					global: yes
-      roles:
-      - { role: ansible-role-npm, node_modules: "{{ npm_modules_to_install }}" }
+- hosts: webservers
+  vars:
+        - npm_modules_to_install:
+            - name: npm
+                state: latest
+                global: yes
+            - name: grunt-cli
+                state: latest
+                global: yes
+  roles:
+  - { role: ansible-role-npm, node_modules: "{{ npm_modules_to_install }}" }
 ```
 
 License
