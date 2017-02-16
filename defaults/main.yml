@@ -2,3 +2,4 @@
 # defaults file for blank
 node_version: "0.10"
 distro: "trusty"
+node_modules: []
