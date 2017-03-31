@@ -14,6 +14,15 @@
   - nodejs
   - npm
 
+- name: Ensure n is present
+  npm:
+    state: present
+    name: n
+    global: yes
+
+- name: n version
+  shell: "n {{ n_node_version }}"
+
 - name : Install latest npm
   npm:  name="{{ item.name }}" global="{{ item.global }}" state="{{ item.state }}"
   with_items: "{{ node_modules }}"

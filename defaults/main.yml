@@ -1,5 +1,6 @@
 ---
 # defaults file for blank
-node_version: "0.10"
+node_version: "0.10" # deb url path
+n_node_version: "0.10" # semver
 distro: "trusty"
 node_modules: []
