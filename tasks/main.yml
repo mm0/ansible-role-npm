@@ -8,8 +8,11 @@
   become: yes
 
 - name: Install nodejs
-  apt: name=nodejs state=latest
+  apt: name="{{ item }}" state=latest
   become: yes
+  with_items:
+  - nodejs
+  - npm
 
 - name : Install latest npm
   npm:  name="{{ item.name }}" global="{{ item.global }}" state="{{ item.state }}"
