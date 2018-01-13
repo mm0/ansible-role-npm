@@ -11,7 +11,6 @@
   apt: name="{{ item }}" state=latest
   become: yes
   with_items:
-  - nodejs
   - npm
 
 - name: Ensure n is present
