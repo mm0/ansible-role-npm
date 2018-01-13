@@ -11,16 +11,13 @@
   apt: name="{{ item }}" state=latest
   become: yes
   with_items:
-  - npm
+  - nvm
 
-- name: Ensure n is present
-  npm:
-    state: present
-    name: n
-    global: yes
+- name: nvm version
+  shell: "nvm install {{ n_node_version }}"
 
-- name: n version
-  shell: "n {{ n_node_version }}"
+- name: nvm version
+  shell: "nvm use {{ n_node_version }}"
 
 - name : Install latest npm
   npm:  name="{{ item.name }}" global="{{ item.global }}" state="{{ item.state }}"
