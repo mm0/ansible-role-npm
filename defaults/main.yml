@@ -4,3 +4,8 @@ node_version: "0.10" # deb url path
 n_node_version: "0.10" # semver
 distro: "trusty"
 node_modules: []
+
+nodejs_package_json_path: ""
+npm_config_unsafe_perm: "false"
+npm_config_prefix: "/usr/local/lib/npm"
+
